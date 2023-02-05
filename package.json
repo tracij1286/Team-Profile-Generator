@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/"
+    "url": "git+https://github.com/tracij1286/team-profile-generator.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/"
+    "url": "https://github.com/tracij1286/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/",
+  "homepage": "https://github.com/tracij1286/team-profile-generator#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "bootstrap-icons": "^1.4.1",
