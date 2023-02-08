@@ -1,6 +1,8 @@
+//Employee Test
 const Employee = require('../lib/Employee');
 const Intern = require('../lib/Intern');
 
+//Functions
 test('creates an Intern object', () => {
     const intern = new Intern('Intern1');
 

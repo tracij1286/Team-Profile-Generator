@@ -5,14 +5,14 @@ This Application is a Team Profile Generator which the user is able to answer qu
 
 ## Table of Contents
   * [Description](#description)
+  * [Licenses](#licenses)
   * [Installation](#installation)
   * [Usage](#usage)
   * [Contributors](#contributors)
-  * [Licenses](#licenses)
   * [Tests](#tests)
   * [Questions](#questions)
 
-## license 
+## licenses
 N/A
 
 ## Installation
@@ -25,10 +25,11 @@ Run node index.js or node index in your terminal to launch the application, the 
 ## Contributors
 its a pubic repo, contributors are welcome to add to this application.
 
-## Test
+## Tests
 Run npm run test and inspect what the CLI returns.
-## Links
 
+## Links
+https://github.com/tracij1286/Team-Profile-Generator
 
 ## Questions
 If you have any questions about this repo, contact me directly at tracij50@gmail.com. You can find more of my work at [Tracij1286 on Github](https://github.com/Tracij1286 on Github).

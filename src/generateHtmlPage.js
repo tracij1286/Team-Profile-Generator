@@ -1,11 +1,12 @@
-//instruction here
-const Intern = require('../lib/Intern');
-const Manager = require('../lib/Manager');
-const Engineer = require('../lib/Engineer');
+const Intern = require("../lib/Intern");
+const Manager = require("../lib/Manager");
+const Engineer = require("../lib/Engineer");
 
-// instructions here
-const generateManager = managerTitle => { return managerTitle.map(manager => { 
-    return `<div class="col">
+// Manager card here
+const generateManager = (managerTitle) => {
+  return managerTitle
+    .map((manager) => {
+      return `<div class="col">
     <div class="card shadow-lg" style="width: 18rem;">
         <div class="card-body identity">
             <h5 class="card-title">${manager.getName()}</h5>
@@ -21,14 +22,16 @@ const generateManager = managerTitle => { return managerTitle.map(manager => {
             <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
         </ul>
     </div>
-</div>`
-}
-).join('');
+</div>`;
+    })
+    .join("");
 };
 
-//here 
-const generateIntern = internTitle => { return internTitle.map( intern => {
-    return `<div class="col">
+//Intern card here
+const generateIntern = (internTitle) => {
+  return internTitle
+    .map((intern) => {
+      return `<div class="col">
     <div class="card shadow-lg" style="width: 18rem;">
         <div class="card-body identity">
             <h5 class="card-title">${intern.getName()}</h5>
@@ -42,13 +45,15 @@ const generateIntern = internTitle => { return internTitle.map( intern => {
             <li class="list-group-item">School: ${intern.getSchool()}</li>
         </ul>
     </div>
-    </div>`
-    }
-    ).join('');
+    </div>`;
+    })
+    .join("");
 };
-//here
-const generateEngineer = engineerTitle => { return engineerTitle.map(engineer => {
-    return `<div class="col">
+//Engineer card here
+const generateEngineer = (engineerTitle) => {
+  return engineerTitle
+    .map((engineer) => {
+      return `<div class="col">
     <div class="card shadow-lg" style="width: 18rem;">
         <div class="card-body identity">
             <h5 class="card-title">${engineer.getName()}</h5>
@@ -62,37 +67,38 @@ const generateEngineer = engineerTitle => { return engineerTitle.map(engineer =>
             <li class="list-group-item">GitHub: <a target="_blank" href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
         </ul>
     </div>
-</div>`
-}).join('');
+</div>`;
+    })
+    .join("");
 };
 
-//here
-const generateCards = teamArray => {
-    let cardsArray = [];
-    const managerTitle = teamArray.filter(team => {
-        return team.getRole() === 'Manager';
-    });
-    const engineerTitle = teamArray.filter(team => {
-        return team.getRole() === 'Engineer';
-    });
-    const internTitle = teamArray.filter(team => {
-        return team.getRole() === 'Intern';
-    });
-    if (managerTitle) {
-        cardsArray.push(generateManager(managerTitle));
-    } 
-    if (engineerTitle) {
-        cardsArray.push(generateEngineer(engineerTitle));
-    } 
-    if (internTitle) {
-        cardsArray.push(generateIntern(internTitle));
-    }
-    return cardsArray.join('');
-    };
+//card arrays
+const generateCards = (teamArray) => {
+  let cardsArray = [];
+  const managerTitle = teamArray.filter((team) => {
+    return team.getRole() === "Manager";
+  });
+  const engineerTitle = teamArray.filter((team) => {
+    return team.getRole() === "Engineer";
+  });
+  const internTitle = teamArray.filter((team) => {
+    return team.getRole() === "Intern";
+  });
+  if (managerTitle) {
+    cardsArray.push(generateManager(managerTitle));
+  }
+  if (engineerTitle) {
+    cardsArray.push(generateEngineer(engineerTitle));
+  }
+  if (internTitle) {
+    cardsArray.push(generateIntern(internTitle));
+  }
+  return cardsArray.join("");
+};
 
 //generates html page here
-module.exports = cardsArray => {
-    return ` 
+module.exports = (cardsArray) => {
+  return ` 
     <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -116,4 +122,4 @@ module.exports = cardsArray => {
   </body>
   </html>
       `;
-    };
+};

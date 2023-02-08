@@ -1,4 +1,3 @@
-//functions
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateHTML = require("./src/generateHtmlPage");
@@ -6,7 +5,7 @@ const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
 
-//questions
+//class questions
 class Prompt {
   constructor() {
     this.teamArray = [];
@@ -19,7 +18,7 @@ class Prompt {
     return this.teamArray;
   }
 
-  //Questions
+  //Generator Questions
   questions() {
     inquirer
       .prompt({
@@ -95,7 +94,7 @@ class Prompt {
               },
             ])
 
-            // Pushes Manager data into teamArray
+            // Pushes Manager data into Array
             .then((templateData) => {
               const newManager = new Manager(
                 templateData.name,
@@ -167,7 +166,7 @@ class Prompt {
                 },
               },
 
-              // Pushes Engineer data into teamArray
+              // Pushes Engineer data into Array
             ])
             .then((templateData) => {
               const newEngineer = new Engineer(
@@ -240,7 +239,7 @@ class Prompt {
                 },
               },
 
-              // Pushes Intern data into teamArray
+              // Pushes Intern data into Array
             ])
             .then((templateData) => {
               const newIntern = new Intern(
@@ -254,7 +253,7 @@ class Prompt {
               this.questions();
             });
         } else if (employeeType === "I finished entering my team info") {
-          //function that writes the html file in the dist folder
+          //this function writes the html file in the dist folder
           const pagehtml = generateHTML(this.getTeamArray());
           fs.writeFile("./dist/index.html", pagehtml, (err) => {
             if (err) throw new Error(err);

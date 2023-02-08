@@ -17,3 +17,9 @@ header h1 {
 .col {
     margin: 15px;
 }
+
+   /*Images are stacked at 768px or smaller */
+  @media screen and (max-width: 768px) {
+    body {
+      width: 100%;
+    }}
